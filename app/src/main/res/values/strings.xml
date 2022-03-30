@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MiniProject</string>
+    <string name="shopping_cart">Shopping Cart</string>
+    <string name="_1">1</string>
+    <string name="total">Total</string>
+    <string name="_20">₹20</string>
+    <string name="price">Price</string>
+    <string name="name">Name</string>
+    <string name="categories">Categories</string>
+    <string name="place_your_order">Place Your Order</string>
 </resources>
