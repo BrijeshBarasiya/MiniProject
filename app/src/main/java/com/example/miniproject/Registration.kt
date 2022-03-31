@@ -1,0 +1,70 @@
+package com.example.miniproject
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
+import com.example.miniproject.databinding.ActivityLoginBinding
+import com.example.miniproject.databinding.ActivityRegistrationBinding
+import java.util.regex.Pattern
+
+class Registration : AppCompatActivity() {
+
+    val EMAIL_ADDRESS_PATTERN = Pattern.compile(
+        "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+                "\\@" +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+                "(" +
+                "\\." +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+                ")+"
+    )
+
+    private lateinit var binding: ActivityRegistrationBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_registration)
+        binding = ActivityRegistrationBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.emailEdittext.doOnTextChanged { text, start, before, count ->
+            if (text != "") {
+                binding.email.error = null
+            }
+        }
+
+        binding.passwordEdittext.doOnTextChanged { text, start, before, count ->
+            if (text != "") {
+                binding.password.error = null
+            }
+        }
+
+        binding.confirmPasswordEdittext.doOnTextChanged { text, start, before, count ->
+            if (text != "") {
+                binding.confirmPassword.error = null
+            }
+        }
+
+        binding.goToSignin.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
+
+        binding.signUpButton.setOnClickListener {
+            if (binding.emailEdittext.text.toString() == "" || binding.passwordEdittext.text.toString() == "" || binding.confirmPasswordEdittext.text.toString() == "") {
+                binding.email.error = "Required*"
+                binding.password.error = "Required*"
+                binding.confirmPassword.error = "Required*"
+            } else if(!EMAIL_ADDRESS_PATTERN.matcher(binding.emailEdittext.text!!).matches()) {
+                binding.email.error = "Invalid Email id"
+                Log.d("msg", binding.emailEdittext.text.toString())
+            }  else if ( binding.passwordEdittext.text.toString() != binding.confirmPasswordEdittext.text.toString()) {
+                binding.confirmPassword.error = "Passwords mismatch!"
+            } else {
+                Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+}

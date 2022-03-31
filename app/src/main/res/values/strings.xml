@@ -1,5 +1,36 @@
 <resources>
     <string name="app_name">MiniProject</string>
+    <string name="title_activity_login_screen">LoginScreen</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- Login strings -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in">Sign in!</string>
+    <string name="or">OR</string>
+    <!-- End Login strings -->
+
+    <!-- Sign up string -->
+    <string name="username">Username</string>
+    <string name="sign_up">Sign up</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="joined_us_before_sign_in">Joined us before?</string>
+    <string name="haven_t_registered">Haven\'t registered?</string>
+    <!-- End Sign up strings -->
+
+    <!-- List items -->
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <!-- End List items -->
+
     <string name="shopping_cart">Shopping Cart</string>
     <string name="_1">1</string>
     <string name="total">Total</string>
