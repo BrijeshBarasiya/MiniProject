@@ -13,6 +13,10 @@ android {
         viewBinding true
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "com.example.miniproject"
         minSdk 28
@@ -54,7 +58,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
