@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">MiniProject</string>
-    <string name="title_activity_login_screen">LoginScreen</string>
+
+    <string name="app_name">eStationery</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -39,4 +39,20 @@
     <string name="name">Name</string>
     <string name="categories">Categories</string>
     <string name="place_your_order">Place Your Order</string>
+
+    <!--- DASHBOARD AND ITEMS PAGES -->
+    <string name="dashboard_logout">Logout</string>
+    <string name="dashboard_order_history">Order History</string>
+    <string name="dashboard_profile">Profile</string>
+    <string name="dashboard_cart">Cart</string>
+    <string name="dashboard_create_order">Create Order</string>
+    <string name="admin_add_items">Add Items</string>
+    <string name="title_activity_login_screen">LoginScreen</string>
+    <string name="order_default_name">Brijesh Barasiya</string>
+    <string name="order_history">Order History</string>
+    <string name="dashboard_verification">Verification</string>
+    <string name="dashboard_enter_otp">Enter OTP</string>
+    <string name="dashboard_submit">Submit</string>
+    <string name="dashboard_image">Image</string>
+    <!--- END DASHBOARD AND ITEMS PAGES -->
 </resources>

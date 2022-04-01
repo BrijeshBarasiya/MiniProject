@@ -1,5 +1,6 @@
 package com.example.miniproject
 
+import Dashboard.UserDashboard
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -47,7 +48,7 @@ class Login : AppCompatActivity() {
         }
 
         binding.goToSignup.setOnClickListener {
-            val intent = Intent(this, ItemsList::class.java)
+            val intent = Intent(this, UserDashboard::class.java)
             startActivity(intent)
         }
 
