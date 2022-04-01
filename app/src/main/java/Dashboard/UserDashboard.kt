@@ -1,13 +1,14 @@
 package Dashboard
 
+import Firebase.database
 import User.OrderHistory
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.miniproject.Categories
-import com.example.miniproject.ItemsList
 import com.example.miniproject.ShoppingCart
 import com.example.miniproject.databinding.DeshboardUserDeshboardBinding
+
 
 class UserDashboard : AppCompatActivity() {
 
@@ -20,7 +21,7 @@ class UserDashboard : AppCompatActivity() {
         setContentView(view)
 
         binding.clkCreateOrder.setOnClickListener {
-            Intent(this,Categories::class.java).apply {
+            Intent(this, Categories::class.java).apply {
                 startActivity(this)
             }
         }

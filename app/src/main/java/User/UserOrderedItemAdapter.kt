@@ -1,15 +1,17 @@
 package User
 
+import Dashboard.ItemDetails
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.miniproject.Item
 import com.example.miniproject.OrderedItemModelClass
 import com.example.miniproject.R
 
 class UserOrderedItemAdapter(
-    private val elements: List<OrderedItemModelClass>
+    private val elements: List<ItemDetails>
 ): RecyclerView.Adapter<UserOrderedItemHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserOrderedItemHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.user_order_history_items, parent, false)
@@ -17,7 +19,7 @@ class UserOrderedItemAdapter(
     }
 
     override fun onBindViewHolder(holder: UserOrderedItemHolder, position: Int) {
-        val element: OrderedItemModelClass = elements[position]
+        val element: ItemDetails = elements[position]
         holder.itemName.text = element.itemName
         holder.itemPrice.text = "Price: " + element.itemPrice
         holder.itemQty.text = "Oty: " + element.itemQty
