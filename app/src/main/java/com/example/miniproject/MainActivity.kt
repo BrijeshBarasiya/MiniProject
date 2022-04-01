@@ -18,14 +18,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user = hashMapOf(
-            "firstname" to "Aparna",
-            "lastname" to "Tati"
+            "firstname" to "Rishita",
+            "lastname" to "Panchal"
         )
 
+        var check = false
         database.collection("Users").add(user).addOnSuccessListener { documentReference ->
+            Log.d("Success", documentReference.id)
             Toast.makeText(this, documentReference.id, Toast.LENGTH_LONG).show()
+            Log.d("success", "db")
+            check =  true
         }.addOnFailureListener {
+            Log.d("failure", it.stackTraceToString())
             Toast.makeText(this, it.localizedMessage, Toast.LENGTH_LONG).show()
         }
+
     }
 }
