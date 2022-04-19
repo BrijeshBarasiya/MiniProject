@@ -1,5 +1,6 @@
 package com.example.miniproject
 
+import android.content.Intent
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +12,7 @@ class ItemsList : AppCompatActivity() {
     private lateinit var binding: ActivityItemsListBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var recyclerviewAdapte: GridItemsAdapter
+    lateinit var session: SessionManagement
     val dataList = ArrayList<ItemsData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +20,7 @@ class ItemsList : AppCompatActivity() {
         setContentView(R.layout.activity_items_list)
         binding = ActivityItemsListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        session = SessionManagement(applicationContext)
         dataList.add(ItemsData("Eraser", "Price : 50.00 ", R.drawable.pen))
         dataList.add(ItemsData("Pen", "Price: 250.00", R.drawable.pen))
         dataList.add(ItemsData("Envelop", "Price: 99.00", R.drawable.pen))
@@ -30,6 +32,14 @@ class ItemsList : AppCompatActivity() {
         binding.recyclerview.layoutManager = GridLayoutManager(applicationContext, 2)
         binding.recyclerview.setHasFixedSize(true)
         binding.recyclerview.adapter = recyclerviewAdapte
+
+        binding.logout.setOnClickListener {
+            session.logOutUser()
+            val i = Intent(this, Login::class.java)
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(i)
+        }
     }
 
 }

@@ -1,213 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/base_layout"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/signin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_100sdp"
-        android:text="@string/sign_in"
-        android:textColor="@color/navyBlue"
-        android:textSize="@dimen/_25sdp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/base_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
-        android:hint="@string/email"
-        app:boxStrokeColor="@color/navyBlue"
-        app:boxStrokeWidth="@dimen/_1sdp"
-        app:hintTextColor="@color/navyBlue"
-        app:endIconMode="clear_text"
-        app:helperTextTextColor="@color/red"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signin"
-        app:startIconDrawable="@drawable/email">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:imeActionLabel="next"
-            android:imeOptions="actionNext"
-            android:singleLine="true"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
-        android:hint="@string/password"
-        app:boxStrokeColor="@color/navyBlue"
-        app:boxStrokeWidth="@dimen/_1sdp"
-        app:endIconMode="password_toggle"
-        app:counterEnabled="true"
-        app:counterMaxLength="20"
-        app:hintTextColor="@color/navyBlue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        app:startIconDrawable="@drawable/password">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLength="20"
-            android:imeActionLabel="Done"
-            android:imeOptions="actionDone"
-            android:singleLine="true"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
-        android:text="@string/forgot_password"
-        android:textSize="@dimen/_12sdp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
-
-    <Button
-        android:id="@+id/sign_in_button"
-        style="?attr/materialButtonOutlinedStyle"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_40sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
-        android:backgroundTint="@color/navyBlue"
-        android:text="@string/sign_in"
-        android:textColor="@color/white"
-        app:cornerRadius="@dimen/_25sdp"
-        app:icon="@drawable/go"
-        app:iconGravity="end"
-        app:iconTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:rippleColor="@color/babyBlue"
-        app:strokeColor="@color/white"
-        app:strokeWidth="@dimen/_2sdp" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:text="@string/or"
-        android:textColor="@color/navyBlue"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintEnd_toStartOf="@+id/cardView2"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_1sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_30sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
-
-    <LinearLayout
-        android:id="@+id/google_facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:orientation="horizontal"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textView4">
-
-        <Button
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="@dimen/_110sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:backgroundTint="@color/white"
-            android:text="Google"
-            android:textColor="@color/navyBlue"
-            app:cornerRadius="@dimen/_2sdp"
-            app:icon="@drawable/fb"
-            app:iconTint="@color/navyBlue"
-            app:strokeColor="@color/gray"
-            app:strokeWidth="@dimen/_1sdp" />
-
-        <Button
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_width="@dimen/_110sdp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:backgroundTint="@color/white"
-            android:text="facebook"
-            android:textColor="@color/navyBlue"
-            app:cornerRadius="@dimen/_2sdp"
-            app:icon="@drawable/fb"
-            app:iconTint="@color/navyBlue"
-            app:strokeColor="@color/gray"
-            app:strokeWidth="@dimen/_1sdp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/google_facebook">
+        tools:context=".Login">
 
         <TextView
-            android:id="@+id/sign_in_option"
+            android:id="@+id/signin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/haven_t_registered"
-            android:textSize="@dimen/_14sdp"
-            android:textStyle="bold" />
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:text="@string/sign_in"
+            android:textColor="@color/navyBlue"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:hint="@string/email"
+            app:boxStrokeColor="@color/navyBlue"
+            app:boxStrokeWidth="@dimen/_1sdp"
+            app:endIconMode="clear_text"
+            app:helperTextTextColor="@color/red"
+            app:hintTextColor="@color/navyBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signin"
+            app:startIconDrawable="@drawable/email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeActionLabel="next"
+                android:imeOptions="actionNext"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:hint="@string/password"
+            app:boxStrokeColor="@color/navyBlue"
+            app:boxStrokeWidth="@dimen/_1sdp"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:endIconMode="password_toggle"
+            app:hintTextColor="@color/navyBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email"
+            app:startIconDrawable="@drawable/password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeActionLabel="Done"
+                android:imeOptions="actionDone"
+                android:maxLength="20"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/go_to_signup"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:text="@string/sign_up"
-            android:textColor="@color/navyBlue"
-            android:textSize="@dimen/_14sdp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:text="@string/forgot_password"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/sign_in_button"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            android:backgroundTint="@color/navyBlue"
+            android:text="@string/sign_in"
+            android:textColor="@color/white"
+            app:cornerRadius="@dimen/_25sdp"
+            app:icon="@drawable/go"
+            app:iconGravity="end"
+            app:iconTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:rippleColor="@color/babyBlue"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/_2sdp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/or"
+            android:textColor="@color/navyBlue"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toStartOf="@+id/cardView2"
+            app:layout_constraintStart_toEndOf="@+id/cardView"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_30sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
+
+        <LinearLayout
+            android:id="@+id/google_facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textView4">
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:text="Google"
+                android:textColor="@color/navyBlue"
+                app:cornerRadius="@dimen/_2sdp"
+                app:icon="@drawable/fb"
+                app:iconTint="@color/navyBlue"
+                app:strokeColor="@color/gray"
+                app:strokeWidth="@dimen/_1sdp" />
+
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="@dimen/_110sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:backgroundTint="@color/white"
+                android:text="facebook"
+                android:textColor="@color/navyBlue"
+                app:cornerRadius="@dimen/_2sdp"
+                app:icon="@drawable/fb"
+                app:iconTint="@color/navyBlue"
+                app:strokeColor="@color/gray"
+                app:strokeWidth="@dimen/_1sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/google_facebook">
+
+            <TextView
+                android:id="@+id/sign_in_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/haven_t_registered"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/go_to_signup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/sign_up"
+                android:textColor="@color/navyBlue"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
