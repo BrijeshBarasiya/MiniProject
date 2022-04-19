@@ -18,8 +18,8 @@
             android:id="@+id/categoryImage"
             android:layout_width="100dp"
             android:layout_marginTop="@dimen/_10sdp"
-            app:shapeAppearanceOverlay="@style/roundedImageView"
             android:layout_height="100dp"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"
             android:src="@mipmap/ic_launcher" />

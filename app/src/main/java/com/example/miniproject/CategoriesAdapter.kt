@@ -1,11 +1,15 @@
 package com.example.miniproject
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.miniproject.databinding.SingleCategoryBinding
+import com.squareup.picasso.Picasso
 
-class CategoriesAdapter(private var categoryList: ArrayList<Category>): RecyclerView.Adapter<CategoriesAdapter.ViewHolder>()  {
+
+class CategoriesAdapter(private var context: Context, private var categoryList: ArrayList<Catdata>): RecyclerView.Adapter<CategoriesAdapter.ViewHolder>()  {
 
     private lateinit var binding: SingleCategoryBinding
 
@@ -24,8 +28,9 @@ class CategoriesAdapter(private var categoryList: ArrayList<Category>): Recycler
 
     override fun onBindViewHolder(holder: CategoriesAdapter.ViewHolder, position: Int) {
         val itemDetails = categoryList[position]
-        holder.categoryImage.setImageResource(itemDetails.categoryImage)
-        holder.categoryName.text = itemDetails.categoryName
+        Picasso.get().load(itemDetails.cimage.toString()).into(holder.categoryImage)
+        Log.d("Image", itemDetails.cimage.toString())
+        holder.categoryName.text = itemDetails.cname
     }
 
     override fun getItemCount(): Int {
