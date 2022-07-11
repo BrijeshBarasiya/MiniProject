@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniProject">
         <activity
+            android:name=".login_demo_activity"
+            android:exported="false" />
+        <activity
             android:name="User.OrderHistory"
             android:exported="false"
             android:parentActivityName="Dashboard.UserDashboard" />
@@ -24,8 +27,8 @@
             android:exported="false" />
         <activity
             android:name=".ItemsList"
-            android:parentActivityName="Dashboard.UserDashboard"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName="Dashboard.UserDashboard" />
         <activity
             android:name=".Splashscreen"
             android:exported="false" />
@@ -43,17 +46,15 @@
         </activity>
         <activity
             android:name=".Categories"
-            android:parentActivityName="Dashboard.UserDashboard"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName="Dashboard.UserDashboard" />
         <activity
             android:name=".ShoppingCart"
-            android:parentActivityName="Dashboard.UserDashboard"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName="Dashboard.UserDashboard" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>
