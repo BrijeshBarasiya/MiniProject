@@ -1,13 +1,14 @@
 package com.example.miniproject
 
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 
-class SessionManagement(var con: Context) {
+class SessionManagement(con: Context) {
+
     var pref: SharedPreferences
     var editor: SharedPreferences.Editor
-    var PRIVATE_MODE: Int = 0
+
+    private var PRIVATE_MODE: Int = 0
 
     init {
         pref = con.getSharedPreferences(PREF_NAME, PRIVATE_MODE)
@@ -17,8 +18,8 @@ class SessionManagement(var con: Context) {
     companion object {
         val PREF_NAME = "KOtlinDemo"
         val IS_LOGIN = "isLoggedIn"
-        val KEY_NAME = "name"
-        val KEY_EMAIL = "email"
+        const val KEY_NAME = "name"
+        const val KEY_EMAIL = "email"
     }
 
     fun createLoginSession(email: String)  {

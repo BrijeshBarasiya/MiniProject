@@ -1,27 +1,22 @@
 package com.example.miniproject
 
-import Dashboard.UserDashboard
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import com.example.miniproject.databinding.ActivityLoginBinding
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
 import java.util.regex.Pattern
-
 
 class Login : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
-    private lateinit var refUser: DatabaseReference
-    private var firebaseId: String =  ""
     private lateinit var binding: ActivityLoginBinding
     lateinit var session: SessionManagement
     lateinit var pre: SharedPreferences
@@ -34,7 +29,6 @@ class Login : AppCompatActivity() {
                 "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
                 ")+"
     )
-    val PASSWORD_PATTERN = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,16 +52,8 @@ class Login : AppCompatActivity() {
             }
         }
 
-        binding.emailEdittext.doOnTextChanged { text, start, before, count ->
-            if (text != "") {
-                binding.email.error = null
-            }
-        }
-        binding.passwordEdittext.doOnTextChanged { text, start, before, count ->
-            if (text != "") {
-                binding.password.error = null
-            }
-        }
+        validateEdittext(binding.emailEdittext, binding.email)
+        validateEdittext(binding.passwordEdittext, binding.password)
 
         binding.goToSignup.setOnClickListener {
             val intent = Intent(this, Registration::class.java)
@@ -85,8 +71,14 @@ class Login : AppCompatActivity() {
                 binding.email.error = null
                 binding.password.error = null
                 loginUser()
-                //val intent = Intent(this, Registration::class.java)
-                //startActivity(intent)
+            }
+        }
+    }
+
+    private fun validateEdittext(editText: EditText, txtLayout: TextInputLayout) {
+        editText.doOnTextChanged { text, _, _, _ ->
+            if (text != "") {
+                txtLayout.error = null
             }
         }
     }
@@ -103,7 +95,8 @@ class Login : AppCompatActivity() {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this,"Error message: ${task.exception!!.message.toString()}", Toast.LENGTH_SHORT).show()
+                    Toast.
+                    makeText(this,"Error message: ${task.exception!!.message.toString()}", Toast.LENGTH_SHORT).show()
                 }
             }
     }
